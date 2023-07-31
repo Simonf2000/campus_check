@@ -1,0 +1,168 @@
+/* Custom styles for the index page */
+
+/* Add a background color to the body */
+body {
+  
+  background-image: url('/static/image/back.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Style for the page heading */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Style for the page subheading */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Style for the page content */
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row;
+  font-size: 0;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 1;
+  padding: 1;
+  font-size: 35px;
+  line-height: 25px;
+  text-align: left;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star-rating label:before {
+  content: '\f005';
+  font-family: FontAwesome;  
+}
+
+.star-rating label:hover {
+  color: #f7d000; 
+  
+}
+
+.star-rating label.checked {
+  color: orange;
+}
+
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+label {
+  margin-right: 10px;
+}
+.form-control {
+  width: 90%;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.jumbotron-brown {
+  background-color: #c9aa71;
+  color: #fff;
+}
+
+.beautiful-button {
+  background-color: #8B5A2B;
+  border-color: #8B5A2B;
+  margin-left: auto;
+  
+}
+
+.beautiful-button:hover {
+  background-color: #A0522D;
+  border-color: #A0522D;
+  
+}
+
+
+.custom-header {
+  background-color: #f5deb3;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: contain;
+}
+/* Style for the site logo */
+.navbar-brand img {
+    height: 40px;
+}
+
+
+/* Style for the navigation links */
+.navbar-nav .nav-link {
+    color: #445163;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+}
+
+/* Style for the active navigation link */
+.navbar-nav .nav-link.active {
+    color: #ffeac1;
+}
+
+/* Style for the container */
+.container {
+    background-color: #fffcc1;
+    box-shadow: 0px 0px 10px #2c2955;
+    border-radius: 5px;
+    padding: 1.5rem;
+    opacity: 0.95; /* set opacity to 80% */
+}
+
+.rating-list {
+  float: right;
+  color: #ddd;
+  padding: 10px 5px;
+}
+
+.rating-list :hover,
+.rating-list :hover ~  {
+  color: orange;
+}
+
+.rating-list {
+  display: inline-block;
+  list-style: none;
+}
+.checked {
+  color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+

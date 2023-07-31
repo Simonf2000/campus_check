@@ -1,0 +1,50 @@
+{% extends 'campus/base.html' %}
+
+{% block content %}
+
+  <h1>Student Profile</h1>
+  {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+  <h2>{{ request.user.email }}</h2>
+  <h3>Personal Information</h3>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.first_name.id_for_label }}">First Name</label>
+      <input type="text" class="form-control" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" value="{{ form.first_name.value }}">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.last_name.id_for_label }}">Last Name</label>
+      <input type="text" class="form-control" id="{{ form.last_name.id_for_label }}" name="{{ form.last_name.name }}" value="{{ form.last_name.value }}">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.email.id_for_label }}">Email</label>
+      <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" value="{{ form.email.value }}">
+    </div>
+        <div class="form-group">
+      <label for="{{ form.date_of_birth.id_for_label }}">Date of Birth</label>
+      {{ form.date_of_birth }}
+    </div>
+    <button type="submit" class="btn btn-primary beautiful-button">Save Changes</button>
+  </form>
+  <h2>Your Reviews</h2>
+  {% for course in courses %}
+    <h4>{{ course.name }}</h4>
+    {% if course.avg_rating %}
+      <p>Rating: 
+      <span class="fa fa-star {% if course.avg_rating > 0 %} checked {% endif %}"></span>
+      <span class="fa fa-star {% if course.avg_rating > 1 %} checked {% endif %}"></span>
+      <span class="fa fa-star {% if course.avg_rating > 2 %} checked {% endif %}"></span>
+      <span class="fa fa-star {% if course.avg_rating > 3 %} checked {% endif %}" ></span>
+      <span class="fa fa-star {% if course.avg_rating > 4 %} checked {% endif %}"></span></p>
+      <p>Review: {{ course.review_text }}</p>
+    {% else %}
+      <p>No ratings yet.</p>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
